@@ -1,5 +1,6 @@
 package at.fh.swengb.bmicalculator;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -40,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
             num1=Double.parseDouble(num1String);
             num2=Double.parseDouble(num2String);
             result = num1 /(num2*num2);
-            result = Math.round((100.0 * result)/100.0);
+            result = Math.round(100.0 * result)/100.0;
             if (result < 19) {
                 resultView.setText(result+"");
                 resultText.setText("You are underweight!");
@@ -64,5 +65,12 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
+    }
+
+    public void showAbout(View view){
+        Intent intent = new Intent(this, DisplayAboutActivity.class);
+        String message = resultView.getText().toString();
+        intent.putExtra("resultOfCalc",message);
+        startActivity(intent);
     }
 }

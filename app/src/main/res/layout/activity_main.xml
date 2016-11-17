@@ -31,7 +31,8 @@
                 android:layout_weight="1"
                 android:textAlignment="center"
                 android:textSize="30sp"
-                android:layout_marginTop="15dp" />
+                android:layout_marginTop="15dp"
+                android:fontFamily="sans-serif" />
         </LinearLayout>
 
         <LinearLayout
@@ -41,7 +42,7 @@
             android:layout_marginTop="30dp">
 
             <TextView
-                android:text="Your weight in kg"
+                android:text="Your weight in kg:"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/textView4"
@@ -66,7 +67,7 @@
             android:layout_marginTop="30dp">
 
             <TextView
-                android:text="Your height in m"
+                android:text="Your height in m:"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/textView5"
@@ -96,7 +97,10 @@
                 android:layout_weight="1"
                 android:textSize="18sp"
                 android:layout_marginTop="30dp"
-                android:onClick="calcBMI" />
+                android:onClick="calcBMI"
+                style="@style/Widget.AppCompat.Button"
+                android:elevation="0dp"
+                android:fontFamily="sans-serif" />
         </LinearLayout>
 
         <LinearLayout
@@ -127,6 +131,21 @@
                 android:layout_weight="1"
                 android:textSize="20sp"
                 android:textAlignment="center" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:text="Show About"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/buttonShowAbout"
+                android:layout_weight="1"
+                android:layout_marginTop="50dp"
+                android:onClick="showAbout" />
         </LinearLayout>
     </LinearLayout>
 </RelativeLayout>

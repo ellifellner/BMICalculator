@@ -40,25 +40,26 @@ public class MainActivity extends AppCompatActivity {
         try {
             num1=Double.parseDouble(num1String);
             num2=Double.parseDouble(num2String);
-            result = num1 /(num2*num2);
-            result = Math.round(100.0 * result)/100.0;
-            if (result < 19) {
-                resultView.setText(result+"");
-                resultText.setText("You are underweight!");
+            if (num2 == 0) {
+                resultView.setText("Your height can't be 0!");
             }
-            else if (result>=19 && result <=24) {
-                resultView.setText(result+"");
-                resultText.setText("Yeah! You have an ideal weight!");
+            else {
+                result = num1 / (num2 * num2);
+                result = Math.round(100.0 * result) / 100.0;
+                if (result < 19) {
+                    resultView.setText(result + "");
+                    resultText.setText("You are underweight!");
+                } else if (result >= 19 && result <= 24) {
+                    resultView.setText(result + "");
+                    resultText.setText("Yeah! You have an ideal weight!");
+                } else if (result >= 25 && result <= 30) {
+                    resultView.setText(result + "");
+                    resultText.setText("You are overweight!");
+                } else if (result >= 31) {
+                    resultView.setText(result + "");
+                    resultText.setText("You are really overweight, you should see a doctor!");
+                }
             }
-            else if (result>=25 && result <=30) {
-                resultView.setText(result+"");
-                resultText.setText("You are overweight!");
-            }
-            else if (result>=31) {
-                resultView.setText(result+"");
-                resultText.setText("You are really overweight, you should see a doctor!");
-            }
-
         } catch (NumberFormatException e) {
             resultView.setText("WRONG INPUT!!!!!");
             resultText.setText("Please only write numbers!");
